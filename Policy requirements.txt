@@ -1,0 +1,98 @@
+Setup the following 5 policies for CloudShell, S3, CloudWatch alarms and CloudWatch logs"
+
+
+CloudShell-Permissions
+------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudshell:DeleteEnvironment",
+                "cloudshell:DescribeEnvironments",
+                "cloudshell:PutCredentials",
+                "cloudshell:StopEnvironment",
+                "cloudshell:CreateEnvironment",
+                "cloudshell:GetEnvironmentStatus",
+                "cloudshell:StartEnvironment",
+                "cloudshell:CreateSession"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+CW-Write-PutMetricAlarm
+------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricAlarm",
+                "cloudwatch:SetAlarmState"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+CWLogs-Read-GetQueryResults-StartQuery
+------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:GetQueryResults",
+                "logs:StartQuery"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+IAM-Write-CreateRole-CreatePolicy-Attach-Detach-Delete
+------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreatePolicy",
+                "iam:DetachRolePolicy",
+                "iam:DeletePolicy",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+S3-PutObject
+------------------------------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:PutObject",
+            "Resource": "*"
+        }
+    ]
+}
