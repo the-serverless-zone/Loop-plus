@@ -1,0 +1,278 @@
+#  I N S T A L L   G U I D E  . . .  Loop+
+
+#  1. Add your SMS text number, your email and the AWS Account number, optional Slack webhook into the first four rows of the script, below, on lines 30,32,34,36.  E X A M P L E S of formats for each on lines 45, 47, 49, 51.
+
+#  2. Ensure that you have the correct permissions: https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
+
+#  3. Copy the script below into cloudshell and it will run imediately. Allow 5 minutes
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Loop+ Cloudshell Script
+# -------------------------------------------------------------------------------------------------------------------------
+
+tMinus()
+(
+  IFS=:
+  set -- $*
+  secs=$(( ${1#0} * 3600 + ${2#0} * 60 + ${3#0} ))
+  while [ $secs -gt 0 ]
+  do
+    sleep 1 &
+    printf "\r%02d:%02d:%02d" $((secs/3600)) $(( (secs/60)%60)) $((secs%60))
+    secs=$(( $secs - 1 ))
+    wait
+  done
+  echo
+)
+
+clear           #    A D D    Y O U R    D E T A I L S    H E R E !!!!
+
+ACCNO="" 
+
+SMSNO=""
+
+EMAIL=""
+
+SLACK=""
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Examples of the 4 fields and their formats below.
+# We will verify these before the install so that we both agree on formats. 
+# -------------------------------------------------------------------------------------------------------------------------
+
+#ACCNO="011617095421"                     <<< Your 12 digit AWS ACCOUNT NUMBER 864917095421
+
+#SMSNO="+1(858) 299-9997"                <<< USA 10 digit cell phone number 
+
+#EMAIL="dave.mcguire@gmail.com"          <<< The email address of the team leader
+
+#SLACK="https://hooks.slack.com/services/X93RUCBUZNV/B07H80DMUQ0/E4hpCFARxtAt65stR7b0wTyBd275d2ae-2470-4eee-a195-aac04883fdd4" 
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Webhook creation: should you wish to link a channel to the alerts. 
+
+# Here is a good 60 second video link:                           
+# https://www.youtube.com/watch?v=aD-01Y9jaIU
+# -------------------------------------------------------------------------------------------------------------------------
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Verification section:
+# -------------------------------------------------------------------------------------------------------------------------
+
+clear
+
+SLKISSUES=0
+account_error_check=">>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> There need to be at least 12 characters in the account number, please alter the number and re-run the script."	
+sms_num_error_check=">>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> There need to be at least 10 characters in the sms number, please alter the number and re-run the script."
+slack_check=">>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> There need to be at least 117 characters in the slack webhook, please alter the number and re-run the script."
+email_check=">>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> The email needs to be altered, please check the syntax of your email and re-run the script."
+slack_hkinf=">>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> >>>>>>>>>>>>>> example: https://hooks.slack.com/services/X93RUCBUZNV/B07H80DMUQ0/E4hpCFARxtAt65stR7b0wTyBd275d2ae-2470-4eee-a195-aac04883fdd4"
+
+if [[ $EMAIL == "" ]] ; then
+  clear
+  echo "Email cannot be left blank, add in the email and re-run."
+  tMinus "00:00:10"
+  exit
+fi
+
+clear
+
+if [[ $ACCNO == "" ]] ; then
+  clear
+  echo "The AWS account number cannot be left blank, add in the 12-digit number and re-run."
+  tMinus "00:00:10"
+  exit
+fi
+
+clear
+
+if [[ $SMSNO == "" ]] ; then
+  clear
+  echo "The SMS number cannot be left blank, add in the +1 USA number and re-run. 50 Federal USA states and protectorates only."
+  tMinus "00:00:15"
+  exit
+fi
+
+clear
+
+if [[ $SLACK == "" ]] ; then
+  clear
+  echo "Slack is empty, however slack is optional and can be left blank, add this in later if you wish. Continuing with the install ..."
+  tMinus "00:00:10"
+  exit
+fi
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Initial verification passed:
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:00:05"
+
+regex="^(([-a-zA-Z0-9\!#\$%\&\'*+/=?^_\`{\|}~]+|(\"([][,:;<>\&@a-zA-Z0-9\!#\$%\&\'*+/=?^_\`{\|}~-]|(\\\\[\\ \"]))+\"))\.)*([-a-zA-Z0-9\!#\$%\&\'*+/=?^_\`{\|}~]+|(\"([][,:;<>\&@a-zA-Z0-9\!#\$%\&\'*+/=?^_\`{\|}~-]|(\\\\[\\ \"]))+\"))@\w((-|\w)*\w)*\.(\w((-|\w)*\w)*\.)*\w{2,4}$"
+
+if [[ $EMAIL =~ $regex ]] ; then
+  echo "email ok"
+else
+
+  clear
+  
+  echo
+  
+  $email_check
+  tMinus "00:00:10"
+  exit
+fi
+
+clear
+
+ACCNO=$(sed 's/[.-]//g' <<< "$ACCNO")
+ACCNO=$(sed 's/[. ]//g' <<< "$ACCNO")
+echo $ACCNO
+str=$ACCNO
+n=${#str}
+echo "Length of the Account number string is : $n "
+
+if [ "$n" -ne 12 ]; then
+	clear
+        echo $account_error_check
+	tMinus "00:00:10"
+        exit
+fi
+
+clear
+
+SMSNO=$(sed 's/[.-]//g' <<< "$SMSNO")
+SMSNO=$(sed 's/[. ]//g' <<< "$SMSNO")
+SMSNO=$(sed 's/[.+]//g' <<< "$SMSNO")
+SMSNO=$(sed 's/[.(]//g' <<< "$SMSNO")
+SMSNO=$(sed 's/[.)]//g' <<< "$SMSNO")
+
+echo $SMSNO
+str=$SMSNO
+n=${#str}
+
+clear
+
+
+echo "Length of the SMS Number string is : $n "
+if [ "$n" -lt 9 ]; then
+    clear
+    echo $sms_num_error_check
+    	tMinus "00:00:10"
+    exit
+fi
+# Email regex check ok."
+# Account number length ok."
+# SMS number minimum length ok."
+	tMinus "00:00:05"
+	
+clear
+
+SLACK=$(sed 's/[ ]//g' <<< "$SLACK")
+echo $SLACK
+strS=$SLACK
+n=${#strS}
+
+clear
+
+if [ "$n" -lt 117 ]; then
+  $SLACK = "xxx-SLACK-xxx"
+fi
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Verification of your contact information was successful:
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:00:05"
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Setting up the installation:
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:00:05"
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Commands to ensure a clean install - let this process continue every time you install to be sure of a fresh deployment. 
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:00:05"
+AC2="297942243344"
+aws iam detach-role-policy --role-name crossP --policy-arn arn:aws:iam::$ACCNO:policy/log-read-P
+aws iam detach-role-policy --role-name crossP --policy-arn arn:aws:iam::$ACCNO:policy/lambda-list-P
+aws iam delete-role --role-name crossP
+aws iam delete-policy --policy-arn arn:aws:iam::$ACCNO:policy/lambda-list-P
+aws iam delete-policy --policy-arn arn:aws:iam::$ACCNO:policy/log-read-P
+aws cloudwatch delete-alarms --alarm-names alarm2sns
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Pre-configuration is complete:
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:00:05"
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Secondary setup is proceeding:
+# -------------------------------------------------------------------------------------------------------------------------
+AC2="297942243344"
+aws iam create-policy --policy-name log-read-P --policy-document '{"Version": "2012-10-17","Statement": [{"Sid": "VisualEditor0","Effect":"Allow","Action":["logs:GetQueryResults","logs:StartQuery"],"Resource":"*"}]}'
+aws iam create-policy --policy-name lambda-list-P --policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"VisualEditor0","Effect":"Allow","Action":"lambda:ListFunctions","Resource":"*"}]}'
+aws iam create-role --role-name crossP --assume-role-policy-document '{"Version":"2012-10-17","Statement":[{"Sid":"Statement1","Effect":"Allow","Principal":{"AWS":"arn:aws:iam::'$AC2':root"},"Action":"sts:AssumeRole"}]}'
+aws cloudwatch put-metric-alarm --alarm-name alarm2sns --metric-name Invocations --namespace AWS/Lambda --comparison-operator GreaterThanThreshold --statistic Sum --evaluation-periods 1 --period 60 --threshold 5 --alarm-actions arn:aws:lambda:us-east-1:$AC2:function:fn_$ACCNO
+aws iam attach-role-policy --policy-arn arn:aws:iam::$ACCNO:policy/log-read-P --role-name crossP
+aws iam attach-role-policy --policy-arn arn:aws:iam::$ACCNO:policy/lambda-list-P --role-name crossP
+
+clear
+
+SLACK=${SLACK// /}
+ACCNO=${ACCNO// /}
+EMAIL=${EMAIL// /}
+SMSNO=${SMSNO// /}
+SLACK=${SLACK////|}
+.>"bar $ACCNO $EMAIL $SMSNO $SLACK" 2>NUL
+aws s3 cp "bar $ACCNO $EMAIL $SMSNO $SLACK" s3://loop-detector-clients
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Secondary Setup is three minutes from completion: 
+# -------------------------------------------------------------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------------------------------------------------------------
+# IMPORTANT - leave this screen open in order to carry out an alarm test (this will take around 4 minutes)
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:03:00"
+
+clear
+
+aws cloudwatch set-alarm-state --alarm-name "alarm2sns" --state-value ALARM --state-reason "testing-purposes" --region us-east-1
+
+clear
+
+# -------------------------------------------------------------------------------------------------------------------------
+# An alarm and permissions assessment is taking place: check your phone for SMS messages in the next minute or so.
+# -------------------------------------------------------------------------------------------------------------------------
+tMinus "00:01:00"
+
+# -------------------------------------------------------------------------------------------------------------------------
+# Install complete - please check for text message regarding install and another message for alarm/IAM permissions analysis.
+#
+# If permissions are good, messages will be along shortly. If you do not get an SMS read the security requirements doc here: 
+# https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
+#
+# Add permissions and run the script again if you are missing any. #
+# The Loop+  =team thanks you for trying out this release.
+# -------------------------------------------------------------------------------------------------------------------------
+
+
