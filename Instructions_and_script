@@ -3,10 +3,9 @@
 
 #  I N S T R U C T I O N S 
 
-#  1. Add your SMS text number, your email and the AWS Account number, optional Slack webhook into the first four rows of the script, below, on lines 30,32,34,36.  E X A M P L E S on lines 45, 47, 49, 51.
+#  1. Add your SMS text number, your email and the AWS Account number, optional Slack webhook into the first four rows of the script, below, on line 34.  E X A M P L E S on lines 50
 #  2. Ensure that you have the correct permissions: https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
 #  3. Copy the script below into cloudshell and it will run imediately. Allow 5 minutes
-
 
 # -------------------------------------------------------------------------------------------------------------------------
 # Loop+ Cloudshell Script
@@ -26,8 +25,11 @@ tMinus()
   done
   echo
 )
+clear
 
-clear           #    A D D    Y O U R    D E T A I L S    H E R E !!!!
+# > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
+#                                    A D D    Y O U R    D E T A I L S    H E R E !!!!
+# > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
 
 ACCNO="" 
 
@@ -39,9 +41,10 @@ SLACK=""
 
 clear
 
+# > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
+
 # -------------------------------------------------------------------------------------------------------------------------
-# Examples of the 4 fields and their formats below.
-# We will verify these before the install so that we both agree on formats. 
+# Examples of the 4 fields and their formats below. We will verify these before the install. 
 # -------------------------------------------------------------------------------------------------------------------------
 
 #ACCNO="011619995421"                     <<< Your 12 digit AWS ACCOUNT NUMBER 864917095421
