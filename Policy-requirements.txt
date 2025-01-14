@@ -1,4 +1,4 @@
-Setup the following 5 policies for CloudShell, S3, CloudWatch alarms and CloudWatch logs"
+Setup the following 5 policies for CloudShell, S3, CloudWatch alarms and CloudWatch logs
 
 
 CloudShell-Permissions
