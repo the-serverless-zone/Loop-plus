@@ -44,13 +44,13 @@ clear
 # We will verify these before the install so that we both agree on formats. 
 # -------------------------------------------------------------------------------------------------------------------------
 
-#ACCNO="011617095421"                     <<< Your 12 digit AWS ACCOUNT NUMBER 864917095421
+#ACCNO="011619995421"                     <<< Your 12 digit AWS ACCOUNT NUMBER 864917095421
 
 #SMSNO="+1(858) 299-9997"                <<< USA 10 digit cell phone number 
 
 #EMAIL="dave.mcguire@gmail.com"          <<< The email address of the team leader
 
-#SLACK="https://hooks.slack.com/services/X93RUCBUZNV/B07H80DMUQ0/E4hpCFARxtAt65stR7b0wTyBd275d2ae-2470-4eee-a195-aac04883fdd4" 
+#SLACK="https://hooks.slack.com/services/X93RUCZUZNV/B07H80DMUQ0/E4hpCFARxtAt65stR7b0wTyBd275d2ae-2470-4eee-a195-aac04883fdd4" 
 
 # -------------------------------------------------------------------------------------------------------------------------
 # Webhook creation: should you wish to link a channel to the alerts. 
