@@ -1,11 +1,12 @@
 #  I N S T A L L   G U I D E  . . .  Loop+ 280 line install script
 
 
+#  I N S T R U C T I O N S 
+
 #  1. Add your SMS text number, your email and the AWS Account number, optional Slack webhook into the first four rows of the script, below, on lines 30,32,34,36.  E X A M P L E S on lines 45, 47, 49, 51.
-
 #  2. Ensure that you have the correct permissions: https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
-
 #  3. Copy the script below into cloudshell and it will run imediately. Allow 5 minutes
+
 
 # -------------------------------------------------------------------------------------------------------------------------
 # Loop+ Cloudshell Script
