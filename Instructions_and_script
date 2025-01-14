@@ -273,7 +273,7 @@ tMinus "00:01:00"
 # If permissions are good, messages will be along shortly. If you do not get an SMS read the security requirements doc here: 
 # https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
 #
-# Add permissions and run the script again if you are missing any. #
+# Add permissions and run the script again if you are missing any. 
 # The Loop+ team thanks you for trying out this release.
 # -------------------------------------------------------------------------------------------------------------------------
 
