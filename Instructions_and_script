@@ -1,6 +1,6 @@
 #  I n s t a l l   G u i d e  . . .  Loop+ 
 
-#  1. Add your SMS text number, your email_address and the AWS Account number, optional slack_webhook webhook into the first four rows of the script, below, on line 34.  EXAMPLES on lines 50
+#  1. Add your SMS text number, your email_address and the AWS Account number, optional slack_webhook webhook into the first four rows of the script, below. 
 #  2. Ensure that you have the correct permissions: https://github.com/the-serverless-zone/Loop-plus/blob/main/Policy-requirements.txt
 #  3. Copy the script below into cloudshell and it will run imediately. Allow 5 minutes
 
