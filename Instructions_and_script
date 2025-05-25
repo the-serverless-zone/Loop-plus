@@ -8,13 +8,17 @@
 # Examples of the 4 fields below with their formats. We will verify these before the install. 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#your_aws_account="077917095421"                    	<<< Your 12 digit AWS ACCOUNT NUMBER
+#your_aws_account="077917095421"                    	
+#<<< Your 12 digit AWS ACCOUNT NUMBER
 
-#sms_number="+1(555) 219-8888"                		<<< USA +1 and 10 digit cell phone number 
+#sms_number="+1(555) 219-8888"                		
+#<<< Your USA +1 10-digit cell phone number 
 
-#email_address="dave.mcguire@gmail.com"          	<<< The email_address address of the team leader
+#email_address="dave.mcguire@gmail.com"          	
+#<<< The email_address address of the team leader
 
-#slack_webhook="https://hooks.slack.com/services/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"                   # <-- webhook creation: 60 second video link: youtube.com/watch?v=aD-01Y9jaIU
+#slack_webhook="https://hooks.slack.com/services/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"                   
+## <-- This is a webhook creation: 60 second video link: youtube.com/watch?v=aD-01Y9jaIU
 
 clear
 
