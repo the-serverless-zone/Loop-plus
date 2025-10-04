@@ -4,5 +4,5 @@ We'll talk you through the video install [click here](https://www.youtube.com/wa
 
 ![Alt text](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png)
 
-Testers may prefer this quick guide
+Testers may prefer this quick text guide
 [click here](https://github.com/the-serverless-zone/Loop-plus/blob/main/AWS-admins-quick-guide)
