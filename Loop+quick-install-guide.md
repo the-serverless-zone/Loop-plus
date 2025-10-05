@@ -1,4 +1,4 @@
-Loop+Quick-install-guide
+**Loop+Quick-install-guide**
 
 Loop+ install quick guide. 9/30/2025
 
