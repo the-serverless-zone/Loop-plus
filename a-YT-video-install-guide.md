@@ -10,7 +10,7 @@ Open Script 1, below.
 
 https://github.com/the-serverless-zone/loop-code/blob/main/Setup%20script%201%20-%20account
 
-Copy the raw file to a text editor. 
+>>> Copy the raw file to a text editor, call it script1.txt
 
 Inside the quotes, below.
 
@@ -43,6 +43,8 @@ Make a careful note of those. Pasting these to an email on your phone is less tr
 Open Script 2:
 
 https://github.com/the-serverless-zone/loop-code/blob/main/Setup_script_2_configure
+
+>>> Copy the raw file to a text editor, call it script2.txt
 
 Add data inside the quotes, and make sure no white space exists after the last quote. 
 
