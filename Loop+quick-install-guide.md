@@ -2,7 +2,7 @@ Loop+Quick-install-guide
 
 Loop+ install quick guide. 9/30/2025
 
-(Optional) use administrator privileges, or for a POLP solution, use the permissions, or make a granular version from the permissions in the link below.
+Note, permissions are provided. (Optional) make a granular version from the permissions in the link below.
 
 https://github.com/the-serverless-zone/loop-code/blob/main/Permissions
 
