@@ -5,7 +5,7 @@ Loop+ install quick guide. 9/30/2025
 - - - 
 
 In this install you'll fill in 4 fields on script-1, then launch it in Cloudshell.
-Add 2 sms fields + the original 4 into script-2, then launch it in CloudShell.
+Add 2 sms fields + the original 4 into script-2, and also launch in CloudShell.
 
 IMPORTANT NOTES
 1. Leave AWS CloudShell open for the few minutes it takes to run.
