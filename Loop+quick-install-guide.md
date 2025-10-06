@@ -1,6 +1,5 @@
-Loop+quick-install-guide
 
-Loop+ install quick guide. 9/30/2025
+**Loop+ install quick guide. 9/30/2025**
 
 - - - 
 
