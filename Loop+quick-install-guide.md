@@ -20,11 +20,7 @@ line 24	Add a cell phone number you can use throughout the install.
 
 line 26	Add an email address you can review throughout the install. 
 
-line 28	Add a Slack webhook. If you do not have one, enter this one below.
-
-https://hooks.slack.com/services/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
-
-*You will obviously not be able to see Slack messages unless you create your own webhook. 
+line 28	Add a Slack webhook. 
 
 Slack accounts are free. The product video details how to create a webhook here. 
 
