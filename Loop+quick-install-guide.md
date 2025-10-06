@@ -4,9 +4,9 @@ Loop+ install quick guide. 9/30/2025
 
 - - - 
 
-In this install, fill in four fields on script-1, 
-then launch it in Cloudshell.
-Add in 2 sms fields plus the original four into script-2, 
+In this install, fill in four fields on script-1.
+Then launch it in Cloudshell.
+Add in 2 sms fields plus the original four into script-2.
 then also launch that in CloudShell.
 
 IMPORTANT NOTES
