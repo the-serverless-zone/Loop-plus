@@ -1,4 +1,4 @@
-**LOOP+ VIDEO INSTALL GUIDE**
+**LOOP+ PRODUCT VIDEO AND INSTALL GUIDE**
 
 First time users: We'll talk you through the video install [click here](https://www.youtube.com/watch?v=mFoOnipn5QQ)
 
