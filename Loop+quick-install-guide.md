@@ -10,7 +10,7 @@ IMPORTANT NOTES
 1. Leave AWS CloudShell open for the few minutes it takes to fully complete.
 2. Keep the browser CloudShell tab selected. Failing to do so will terminate the install.
 3. When adding data, put it inside the quotes.
-4. Do not leave whitespace after the quotes. 
+4. Do not leave whitespace after the quotes. Check and delete any after "..." <--
 
 - - -
 
