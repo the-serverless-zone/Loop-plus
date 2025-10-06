@@ -22,7 +22,7 @@ line 26	Add an email address you can review throughout the install.
 
 line 28	Add a Slack webhook. If you do not have one, enter this one below.
 
-https://hooks.slack.com/services/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
+https://hooks.slack.com/services/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
 
 *You will obviously not be able to see Slack messages unless you create your own webhook. 
 
