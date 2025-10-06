@@ -1,5 +1,5 @@
 
-**Loop+ install quick guide. 9/30/2025**
+**Loop+ install and test quick guide. 9/30/2025**
 
 - - - 
 
