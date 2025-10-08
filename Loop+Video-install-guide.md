@@ -1,7 +1,7 @@
 **LOOP+ PRODUCT VIDEO AND INSTALL GUIDE**
 
-First time users: we'll talk you through the video install [click here](https://www.youtube.com/watch?v=mFoOnipn5QQ)
-
+First time users: we'll talk you through the video install [click here](https://youtu.be/ZY3mJ9TcPKw)
+https://youtu.be/ZY3mJ9TcPKw
 ![Alt text](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png)
 
 **LOOP+ FAST INSTALL AND TEST GUIDE**
