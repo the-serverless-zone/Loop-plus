@@ -4,10 +4,6 @@ First time users: we'll talk you through the video install [click here](https://
 
 ![Alt text](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png)
 
-[<img src="https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png">](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/)
-
-[![Foo](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png)](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/)
-
 **LOOP+ FAST INSTALL AND TEST GUIDE**
 
 AWS staff and DevOps team members may prefer this quick text guide to installing and testing
