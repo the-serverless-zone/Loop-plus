@@ -1,6 +1,6 @@
 **LOOP+ PRODUCT VIDEO AND INSTALL GUIDE**
 
-First time users: we'll talk you through the video install [click here](https://www.youtube.com/watch?v=v09AInGha2s)
+First time users: we'll talk you through the video install [click here](https://www.youtube.com/watch?v=7gSJsBp3yW0)
 
 ![Alt text](https://fogbank-reporting-version-release.s3.us-east-1.amazonaws.com/Logo.png)
 
